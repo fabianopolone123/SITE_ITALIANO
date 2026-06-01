@@ -1,0 +1,36 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alice SRS</title>
+    <link rel="stylesheet" href="{% static 'study/styles.css' %}">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="{% url 'study:dashboard' %}">Alice SRS</a>
+        <nav>
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'study:study' %}">Estudar</a>
+                <a href="{% url 'study:read' %}">Ler</a>
+                <a href="{% url 'study:logout' %}">Sair</a>
+            {% else %}
+                <a href="{% url 'study:login' %}">Entrar</a>
+                <a href="{% url 'study:signup' %}">Criar conta</a>
+            {% endif %}
+        </nav>
+    </header>
+    <main class="shell">
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <p class="message {{ message.tags }}">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% block content %}{% endblock %}
+    </main>
+    <script src="{% static 'study/app.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "study/base.html" %}
+
+{% block content %}
+<section class="auth-panel">
+    <div>
+        <p class="eyebrow">Entrar</p>
+        <h1>Alice SRS</h1>
+    </div>
+    <form class="auth-form" method="post">
+        {% csrf_token %}
+        <label>
+            Usuário
+            <input name="username" autocomplete="username" required>
+        </label>
+        <label>
+            Senha
+            <input name="password" type="password" autocomplete="current-password" required>
+        </label>
+        <button class="primary-link" type="submit">Entrar</button>
+    </form>
+    <p class="auth-link">Ainda não tem conta? <a href="{% url 'study:signup' %}">Criar conta</a></p>
+</section>
+{% endblock %}

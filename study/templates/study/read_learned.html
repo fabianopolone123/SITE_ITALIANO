@@ -1,0 +1,29 @@
+{% extends "study/base.html" %}
+
+{% block content %}
+<section class="reader-head">
+    <div>
+        <p class="eyebrow">Leitura desbloqueada</p>
+        <h1>O que já apareceu</h1>
+    </div>
+    <a class="primary-link" href="{% url 'study:study' %}">Voltar aos cards</a>
+</section>
+
+{% if segments %}
+<article class="reader">
+    {% regroup segments by source_paragraph as paragraph_list %}
+    {% for paragraph in paragraph_list %}
+        <p>
+            {% for segment in paragraph.list %}
+                <span title="{{ segment.translation_pt }}">{{ segment.text_it }}</span>{% if not forloop.last %} {% endif %}
+            {% endfor %}
+        </p>
+    {% endfor %}
+</article>
+{% else %}
+<section class="empty-state">
+    <h2>Nada desbloqueado ainda</h2>
+    <p>Abra alguns cards para montar o primeiro trecho do livro.</p>
+</section>
+{% endif %}
+{% endblock %}

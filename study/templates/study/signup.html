@@ -1,0 +1,27 @@
+{% extends "study/base.html" %}
+
+{% block content %}
+<section class="auth-panel">
+    <div>
+        <p class="eyebrow">Cadastro</p>
+        <h1>Criar conta</h1>
+    </div>
+    <form class="auth-form" method="post">
+        {% csrf_token %}
+        <label>
+            Usuário
+            <input name="username" autocomplete="username" required>
+        </label>
+        <label>
+            Senha
+            <input name="password1" type="password" autocomplete="new-password" required>
+        </label>
+        <label>
+            Repetir senha
+            <input name="password2" type="password" autocomplete="new-password" required>
+        </label>
+        <button class="primary-link" type="submit">Criar conta</button>
+    </form>
+    <p class="auth-link">Já tem conta? <a href="{% url 'study:login' %}">Entrar</a></p>
+</section>
+{% endblock %}

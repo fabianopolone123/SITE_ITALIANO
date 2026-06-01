@@ -1,0 +1,50 @@
+{% extends "study/base.html" %}
+
+{% block content %}
+<section class="overview">
+    <div>
+        <p class="eyebrow">Capitolo I</p>
+        <h1>Giù nella tana del coniglio</h1>
+    </div>
+    <a class="primary-link" href="{% url 'study:study' %}">Começar revisão</a>
+</section>
+
+<section class="stats-grid">
+    <div class="metric">
+        <span>{{ totals.all_cards }}</span>
+        <p>cards no lote</p>
+    </div>
+    <div class="metric">
+        <span>{{ totals.seen }}</span>
+        <p>já abertos</p>
+    </div>
+    <div class="metric">
+        <span>{{ totals.due }}</span>
+        <p>para revisar</p>
+    </div>
+    <div class="metric">
+        <span>{{ progress }}%</span>
+        <p>progresso</p>
+    </div>
+</section>
+
+<div class="progress-track" aria-label="Progresso">
+    <div style="width: {{ progress }}%"></div>
+</div>
+
+{% if next_segment %}
+<section class="next-row">
+    <div>
+        <p class="eyebrow">Próximo card</p>
+        <h2>{{ next_segment.text_it }}</h2>
+        <p>{{ next_segment.translation_pt }}</p>
+    </div>
+    <button class="icon-button speak-button" data-speak="{{ next_segment.text_it }}" title="Ouvir pronúncia">Play</button>
+</section>
+{% else %}
+<section class="empty-state">
+    <h2>Lote concluído</h2>
+    <p>Os próximos cards podem ser adicionados a partir da continuação do capítulo.</p>
+</section>
+{% endif %}
+{% endblock %}

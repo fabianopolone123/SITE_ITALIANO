@@ -1,0 +1,70 @@
+{% extends "study/base.html" %}
+
+{% block content %}
+{% if segment %}
+<section class="study-layout">
+    <article class="study-panel">
+        <div class="card-meta">
+            <span>Card {{ segment.position }}</span>
+            <span>Capítulo {{ segment.chapter }}</span>
+        </div>
+
+        <p class="italian-line" id="italianLine">{{ segment.text_it }}</p>
+        <button class="speak-button listen-main" data-speak="{{ segment.text_it }}" type="button" title="Ouvir pronúncia">Play</button>
+
+        <details class="answer-block">
+            <summary>Mostrar resposta</summary>
+            <div class="answer-content">
+                <p class="translation">{{ segment.translation_pt }}</p>
+                {% if segment.context_note %}
+                    <p class="context-note">{{ segment.context_note }}</p>
+                {% endif %}
+                {% if segment.verb %}
+                <dl class="verb-grid">
+                    <div>
+                        <dt>Verbo</dt>
+                        <dd>{{ segment.verb }}</dd>
+                    </div>
+                    <div>
+                        <dt>Presente</dt>
+                        <dd>
+                            <span>{{ segment.present_example }}</span>
+                            <button class="mini-play speak-button" data-speak="{{ segment.present_example }}" type="button" title="Ouvir presente">Play</button>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>Passado</dt>
+                        <dd>
+                            <span>{{ segment.past_example }}</span>
+                            <button class="mini-play speak-button" data-speak="{{ segment.past_example }}" type="button" title="Ouvir passado">Play</button>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>Futuro</dt>
+                        <dd>
+                            <span>{{ segment.future_example }}</span>
+                            <button class="mini-play speak-button" data-speak="{{ segment.future_example }}" type="button" title="Ouvir futuro">Play</button>
+                        </dd>
+                    </div>
+                </dl>
+                {% endif %}
+            </div>
+        </details>
+
+        <form class="grade-row" method="post" action="{% url 'study:answer' segment.id %}">
+            {% csrf_token %}
+            <button class="grade again" name="grade" value="again">Errei</button>
+            <button class="grade hard" name="grade" value="hard">Difícil</button>
+            <button class="grade good" name="grade" value="good">Bom</button>
+            <button class="grade easy" name="grade" value="easy">Fácil</button>
+        </form>
+    </article>
+</section>
+{% else %}
+<section class="empty-state">
+    <h1>Nenhum card disponível</h1>
+    <p>Este lote terminou por enquanto.</p>
+    <a class="primary-link" href="{% url 'study:read' %}">Ler o que já aprendi</a>
+</section>
+{% endif %}
+{% endblock %}
