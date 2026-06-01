@@ -3,6 +3,12 @@
 Aplicativo Django para estudar italiano com repetição espaçada usando frases curtas de
 Alice no País das Maravilhas.
 
+Para continuar o projeto em outro chat, leia primeiro:
+
+```text
+PROJECT_CONTEXT.md
+```
+
 ## Rodar localmente
 
 ```powershell

@@ -1,3 +1,6 @@
+import re
+import unicodedata
+
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -8,6 +11,154 @@ from django.utils import timezone
 from django.views.decorators.http import require_POST
 
 from .models import ReviewState, Segment
+
+
+STOP_WORDS = {
+    "alice",
+    "anche",
+    "come",
+    "con",
+    "cosa",
+    "che",
+    "della",
+    "delle",
+    "dagli",
+    "dentro",
+    "di",
+    "dunque",
+    "figure",
+    "gli",
+    "libro",
+    "molto",
+    "nella",
+    "niente",
+    "non",
+    "per",
+    "senza",
+    "si",
+    "sopra",
+    "sorella",
+    "troppo",
+    "una",
+    "uno",
+    "volte",
+}
+
+
+def normalize_words(text):
+    normalized = unicodedata.normalize("NFKD", text.lower())
+    ascii_text = "".join(ch for ch in normalized if not unicodedata.combining(ch))
+    return {
+        word
+        for word in re.findall(r"[a-z']+", ascii_text)
+        if len(word) > 3 and word not in STOP_WORDS
+    }
+
+
+def normalize_tokens(text, min_size=2):
+    normalized = unicodedata.normalize("NFKD", text.lower())
+    ascii_text = "".join(ch for ch in normalized if not unicodedata.combining(ch))
+    return {
+        word
+        for word in re.findall(r"[a-z']+", ascii_text)
+        if len(word) >= min_size and word not in STOP_WORDS
+    }
+
+
+def verb_tokens(segment):
+    if not segment.verb:
+        return set()
+
+    return set(verb_token_map(segment))
+
+
+def verb_token_map(segment):
+    if not segment.verb:
+        return {}
+
+    text = " ".join(
+        [
+            segment.verb,
+            segment.present_example,
+            segment.past_example,
+            segment.future_example,
+        ]
+    )
+    forms = {}
+    for original in re.findall(r"[A-Za-zÀ-ÿ']+", text):
+        normalized = unicodedata.normalize("NFKD", original.lower())
+        key = "".join(ch for ch in normalized if not unicodedata.combining(ch))
+        if len(key) >= 2 and key not in STOP_WORDS:
+            forms.setdefault(key, original)
+    return forms
+
+
+def get_related_segments(segment):
+    current_words = normalize_words(
+        " ".join(
+            [
+                segment.text_it,
+                segment.present_example,
+                segment.past_example,
+                segment.future_example,
+            ]
+        )
+    )
+    current_verb_forms = verb_token_map(segment)
+    related = []
+
+    for other in Segment.objects.exclude(id=segment.id).order_by("position"):
+        reasons = []
+        score = 0
+
+        if segment.verb and other.verb and segment.verb == other.verb:
+            reasons.append(f"mesmo verbo: {segment.verb}")
+            score += 4
+
+        other_verb_forms = verb_token_map(other)
+        shared_verb_forms = sorted(set(current_verb_forms) & set(other_verb_forms))
+        if (segment.verb or other.verb) and shared_verb_forms:
+            useful_forms = [
+                form
+                for form in shared_verb_forms
+                if form not in {segment.verb, other.verb}
+            ]
+            if useful_forms:
+                display_forms = [
+                    current_verb_forms.get(form) or other_verb_forms.get(form) or form
+                    for form in useful_forms[:3]
+                ]
+                reasons.append("outro tempo do verbo: " + ", ".join(display_forms))
+                score += 3 + len(useful_forms)
+
+        other_words = normalize_words(
+            " ".join(
+                [
+                    other.text_it,
+                    other.present_example,
+                    other.past_example,
+                    other.future_example,
+                ]
+            )
+        )
+        shared_words = sorted(current_words & other_words)
+        if shared_words:
+            reasons.append("palavra parecida: " + ", ".join(shared_words[:3]))
+            score += len(shared_words)
+
+        if reasons:
+            related.append(
+                {
+                    "segment": other,
+                    "reasons": reasons,
+                    "score": score,
+                }
+            )
+
+    return sorted(
+        related,
+        key=lambda item: (-item["score"], item["segment"].position),
+    )[:6]
 
 
 def ensure_review_states(user):
@@ -121,7 +272,10 @@ def study_card(request):
     return render(
         request,
         "study/study_card.html",
-        {"segment": review.segment if review else None},
+        {
+            "segment": review.segment if review else None,
+            "related_segments": get_related_segments(review.segment) if review else [],
+        },
     )
 
 

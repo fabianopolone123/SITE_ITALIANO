@@ -12,6 +12,24 @@
         <p class="italian-line" id="italianLine">{{ segment.text_it }}</p>
         <button class="speak-button listen-main" data-speak="{{ segment.text_it }}" type="button" title="Ouvir pronúncia">Play</button>
 
+        {% if related_segments %}
+        <section class="related-panel">
+            <p class="related-title">Frases parecidas neste lote</p>
+            <ul>
+                {% for item in related_segments %}
+                    <li>
+                        <div>
+                            <strong>{{ item.segment.text_it }}</strong>
+                            <span>{{ item.segment.translation_pt }}</span>
+                            <small>{{ item.reasons|join:"; " }}</small>
+                        </div>
+                        <button class="mini-play speak-button" data-speak="{{ item.segment.text_it }}" type="button" title="Ouvir frase relacionada">Play</button>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+
         <details class="answer-block">
             <summary>Mostrar resposta</summary>
             <div class="answer-content">
