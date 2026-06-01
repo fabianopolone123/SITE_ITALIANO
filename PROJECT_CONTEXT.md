@@ -25,7 +25,8 @@ O PDF do livro esta na pasta do projeto local:
 
 `le-avventure-di-alice-nel-paese-delle-meraviglie-alice-no-pais-das-maravilhas-lewis-carroll.pdf`
 
-O PDF nao esta versionado no Git por estar no `.gitignore`.
+O PDF esta versionado no GitHub porque o usuario pediu para subir o arquivo
+para a nuvem junto com o projeto.
 
 ## Stack
 
@@ -91,7 +92,8 @@ http://127.0.0.1:8000/
   - exemplo no passado;
   - exemplo no futuro.
 - O botao "Ler" deve usar frases ja vistas/abertas pelo usuario, em ordem.
-- Nao versionar `db.sqlite3`, caches, ambientes virtuais ou PDF.
+- Nao versionar `db.sqlite3`, caches ou ambientes virtuais.
+- O PDF do livro deve permanecer versionado no repositorio.
 - A cada alteracao relevante:
   1. Atualizar este documento se a decisao mudar ou algo novo for criado.
   2. Rodar `python manage.py check`.
@@ -121,3 +123,4 @@ main
 - Depois foram adicionadas frases relacionadas no card.
 - Depois a relacao foi melhorada para considerar formas do verbo em outros
   tempos, como presente, passado e futuro.
+- Depois o PDF do livro foi incluido no GitHub junto com o projeto.
