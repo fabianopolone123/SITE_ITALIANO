@@ -22,3 +22,18 @@ Depois abra:
 ```text
 http://127.0.0.1:8000/
 ```
+
+## Deploy no VPS
+
+Instalar ou atualizar o atalho no VPS:
+
+```bash
+cd /var/www/site_idiomas
+sudo install -m 755 scripts/update_vps.sh /usr/local/bin/atualizar-site-idiomas
+```
+
+Depois, para publicar uma nova versao:
+
+```bash
+atualizar-site-idiomas
+```

@@ -127,3 +127,7 @@ main
 - Depois o projeto foi preparado para deploy no VPS usando variaveis de ambiente
   `DJANGO_SECRET_KEY`, `DJANGO_DEBUG`, `DJANGO_ALLOWED_HOSTS` e
   `DJANGO_CSRF_TRUSTED_ORIGINS`, com `STATIC_ROOT` para `collectstatic`.
+- Depois foi criado `scripts/update_vps.sh`, instalado no VPS como
+  `/usr/local/bin/atualizar-site-idiomas`, para atualizar o projeto novo,
+  executar migrations, `seed_chapter_one`, `collectstatic`, `check` e reiniciar
+  o servico `site_idiomas`.
