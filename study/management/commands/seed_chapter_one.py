@@ -12,7 +12,8 @@ CARDS = [
         "present_example": "Alice muore di noia.",
         "past_example": "Alice moriva di noia.",
         "future_example": "Alice morirà di noia.",
-        "source_paragraph": 1,
+        "context_note": "Morire di noia e uma expressao idiomatica: literalmente morrer de tedio, usada para dizer que alguem esta muito entediado. O imperfeito moriva descreve uma sensacao que durava naquele momento.",
+        "source_paragraph": 1
     },
     {
         "position": 2,
@@ -22,20 +23,22 @@ CARDS = [
         "present_example": "Alice sta seduta.",
         "past_example": "Alice stava seduta.",
         "future_example": "Alice starà seduta.",
-        "source_paragraph": 1,
+        "context_note": "Starsene e uma forma pronominal de stare que passa ideia de ficar ali, parado, sem fazer muita coisa. Seduta concorda com Alice, por isso fica no feminino.",
+        "source_paragraph": 1
     },
     {
         "position": 3,
         "text_it": "con la sorella",
         "translation_pt": "com a irmã",
-        "source_paragraph": 1,
+        "context_note": "Con indica companhia. La sorella significa a irma; o artigo la mostra que sorella e feminino singular.",
+        "source_paragraph": 1
     },
     {
         "position": 4,
         "text_it": "sulla proda",
         "translation_pt": "na margem",
-        "context_note": "Proda: margem ou beira.",
-        "source_paragraph": 1,
+        "context_note": "Proda significa margem ou beira. Sulla junta su + la e indica posicao: sobre ou na margem.",
+        "source_paragraph": 1
     },
     {
         "position": 5,
@@ -45,7 +48,8 @@ CARDS = [
         "present_example": "Non fa niente.",
         "past_example": "Non faceva niente.",
         "future_example": "Non farà niente.",
-        "source_paragraph": 1,
+        "context_note": "Senza + infinitivo indica uma acao que nao acontece: sem fazer nada. Far niente e forma natural em italiano para nao fazer nada.",
+        "source_paragraph": 1
     },
     {
         "position": 6,
@@ -55,25 +59,29 @@ CARDS = [
         "present_example": "Alice sbircia il libro.",
         "past_example": "Alice aveva sbirciato.",
         "future_example": "Alice sbircerà il libro.",
-        "source_paragraph": 1,
+        "context_note": "Aveva sbirciato e mais-que-perfeito composto: tinha espiado antes daquele momento. Sbirciare e olhar rapidamente, sem muita atencao.",
+        "source_paragraph": 1
     },
     {
         "position": 7,
         "text_it": "un paio di volte",
         "translation_pt": "algumas vezes",
-        "source_paragraph": 1,
+        "context_note": "Un paio literalmente e um par, mas no uso comum tambem pode significar algumas. Volte e o plural de volta, aqui com sentido de vezes.",
+        "source_paragraph": 1
     },
     {
         "position": 8,
         "text_it": "il libro",
         "translation_pt": "o livro",
-        "source_paragraph": 1,
+        "context_note": "Il e artigo definido masculino singular. Libro e masculino, por isso recebe il, nao la.",
+        "source_paragraph": 1
     },
     {
         "position": 9,
         "text_it": "che la sorella",
         "translation_pt": "que a irmã",
-        "source_paragraph": 1,
+        "context_note": "Che aqui funciona como pronome relativo: liga a ideia do livro com a pessoa que estava lendo. E uma palavra muito comum para conectar frases.",
+        "source_paragraph": 1
     },
     {
         "position": 10,
@@ -83,7 +91,8 @@ CARDS = [
         "present_example": "Lei legge.",
         "past_example": "Lei stava leggendo.",
         "future_example": "Lei leggerà.",
-        "source_paragraph": 1,
+        "context_note": "Stava leggendo e passado progressivo: estava lendo. Stare + gerundio mostra uma acao em andamento.",
+        "source_paragraph": 1
     },
     {
         "position": 11,
@@ -93,13 +102,15 @@ CARDS = [
         "present_example": "Ci sono figure.",
         "past_example": "C'erano figure.",
         "future_example": "Ci saranno figure.",
-        "source_paragraph": 1,
+        "context_note": "C'erano vem de esserci e significa havia ou existiam. Em italiano, ci + essere e a forma normal para falar que algo existe em algum lugar.",
+        "source_paragraph": 1
     },
     {
         "position": 12,
         "text_it": "né dialoghi",
         "translation_pt": "nem diálogos",
-        "source_paragraph": 1,
+        "context_note": "Ne com acento e usado em pares negativos, como nem. Depois de non, a frase pode continuar com ne para acrescentar outra ausencia.",
+        "source_paragraph": 1
     },
     {
         "position": 13,
@@ -109,13 +120,15 @@ CARDS = [
         "present_example": "A cosa serve?",
         "past_example": "A cosa serviva?",
         "future_example": "A cosa servirà?",
-        "source_paragraph": 1,
+        "context_note": "A cosa serve? e uma pergunta muito util: para que serve? Servire aqui nao e servir comida, mas ter utilidade.",
+        "source_paragraph": 1
     },
     {
         "position": 14,
         "text_it": "un libro",
         "translation_pt": "um livro",
-        "source_paragraph": 1,
+        "context_note": "Un e artigo indefinido masculino singular. A diferenca entre il libro e un libro e a mesma de o livro e um livro.",
+        "source_paragraph": 1
     },
     {
         "position": 15,
@@ -125,13 +138,15 @@ CARDS = [
         "present_example": "Alice pensa.",
         "past_example": "Alice pensava.",
         "future_example": "Alice penserà.",
-        "source_paragraph": 1,
+        "context_note": "Pensava esta no imperfeito, usado para pensamento ou estado mental em progresso no passado. Numa narrativa, ele mostra o que Alice estava pensando.",
+        "source_paragraph": 1
     },
     {
         "position": 16,
         "text_it": "senza figure né dialoghi",
         "translation_pt": "sem figuras nem diálogos",
-        "source_paragraph": 1,
+        "context_note": "Senza apresenta a primeira falta; ne acrescenta outra. A estrutura ajuda a ler a ideia completa: sem figuras e sem dialogos.",
+        "source_paragraph": 1
     },
     {
         "position": 17,
@@ -141,19 +156,22 @@ CARDS = [
         "present_example": "Alice calcola.",
         "past_example": "Alice stava calcolando.",
         "future_example": "Alice calcolerà.",
-        "source_paragraph": 2,
+        "context_note": "Dunque pode significar entao, portanto. Stava calcolando usa stare + gerundio para indicar que Alice estava no meio do raciocinio.",
+        "source_paragraph": 2
     },
     {
         "position": 18,
         "text_it": "fra sé e sé",
         "translation_pt": "consigo mesma",
-        "source_paragraph": 2,
+        "context_note": "Fra se e se e expressao fixa para pensar consigo mesmo. Fra tambem pode significar entre.",
+        "source_paragraph": 2
     },
     {
         "position": 19,
         "text_it": "se il piacere",
         "translation_pt": "se o prazer",
-        "source_paragraph": 2,
+        "context_note": "Se aqui introduz uma hipotese ou avaliacao: se o prazer valeria algo. Il piacere e masculino singular.",
+        "source_paragraph": 2
     },
     {
         "position": 20,
@@ -163,13 +181,15 @@ CARDS = [
         "present_example": "Si fa una collana.",
         "past_example": "Si faceva una collana.",
         "future_example": "Si farà una collana.",
-        "source_paragraph": 2,
+        "context_note": "Farsi significa fazer para si mesmo. O si mostra que a acao volta para a propria pessoa: fazer um colar para si.",
+        "source_paragraph": 2
     },
     {
         "position": 21,
         "text_it": "di margherite",
         "translation_pt": "de margaridas",
-        "source_paragraph": 2,
+        "context_note": "Di indica material ou composicao: um colar feito de margaridas. Margherite e plural feminino.",
+        "source_paragraph": 2
     },
     {
         "position": 22,
@@ -179,7 +199,8 @@ CARDS = [
         "present_example": "Vale la fatica.",
         "past_example": "Valeva la fatica.",
         "future_example": "Varrà la fatica.",
-        "source_paragraph": 2,
+        "context_note": "Valere la fatica significa valer o esforco. Fosse valsa esta no subjuntivo, porque aparece dentro de uma avaliacao hipotetica.",
+        "source_paragraph": 2
     },
     {
         "position": 23,
@@ -189,7 +210,8 @@ CARDS = [
         "present_example": "Si tira in piedi.",
         "past_example": "Si tirava in piedi.",
         "future_example": "Si tirerà in piedi.",
-        "source_paragraph": 2,
+        "context_note": "Tirarsi in piedi e levantar-se, puxar-se para ficar de pe. O si indica acao reflexiva.",
+        "source_paragraph": 2
     },
     {
         "position": 24,
@@ -199,19 +221,22 @@ CARDS = [
         "present_example": "Va a raccogliere.",
         "past_example": "Andava a raccogliere.",
         "future_example": "Andrà a raccogliere.",
-        "source_paragraph": 2,
+        "context_note": "Andare a + infinitivo mostra deslocamento com objetivo: ir para colher. Raccogliere significa pegar ou colher do chao ou da natureza.",
+        "source_paragraph": 2
     },
     {
         "position": 25,
         "text_it": "le margherite",
         "translation_pt": "as margaridas",
-        "source_paragraph": 2,
+        "context_note": "Le e artigo definido feminino plural. Margherite termina em -e porque e plural de margherita.",
+        "source_paragraph": 2
     },
     {
         "position": 26,
         "text_it": "quando d'improvviso",
         "translation_pt": "quando de repente",
-        "source_paragraph": 2,
+        "context_note": "D'improvviso e uma contracao de di improvviso. A expressao marca uma mudanca brusca na cena.",
+        "source_paragraph": 2
     },
     {
         "position": 27,
@@ -221,19 +246,22 @@ CARDS = [
         "present_example": "Il coniglio sfreccia.",
         "past_example": "Il coniglio sfrecciò.",
         "future_example": "Il coniglio sfreccerà.",
-        "source_paragraph": 2,
+        "context_note": "Sfrecciare descreve passar muito rapido, como uma flecha. Le accanto significa ao lado dela; le aqui retoma Alice.",
+        "source_paragraph": 2
     },
     {
         "position": 28,
         "text_it": "un coniglio bianco",
         "translation_pt": "um coelho branco",
-        "source_paragraph": 2,
+        "context_note": "Coniglio e masculino; por isso aparece un e o adjetivo bianco tambem fica masculino singular.",
+        "source_paragraph": 2
     },
     {
         "position": 29,
         "text_it": "dagli occhi rosa",
         "translation_pt": "de olhos cor-de-rosa",
-        "source_paragraph": 2,
+        "context_note": "Dagli junta da + gli e pode indicar caracteristica: dos olhos rosa. Occhi e plural masculino.",
+        "source_paragraph": 2
     },
     {
         "position": 30,
@@ -243,7 +271,8 @@ CARDS = [
         "present_example": "Non c'è troppo.",
         "past_example": "Non c'era troppo.",
         "future_example": "Non ci sarà troppo.",
-        "source_paragraph": 3,
+        "context_note": "Non c'era troppo quer dizer que nao havia muita coisa. C'era e singular; ci sara e a forma futura de haver ou existir.",
+        "source_paragraph": 3
     },
     {
         "position": 31,
@@ -253,7 +282,8 @@ CARDS = [
         "present_example": "Alice si meraviglia.",
         "past_example": "Alice si meravigliò.",
         "future_example": "Alice si meraviglierà.",
-        "source_paragraph": 3,
+        "context_note": "Meravigliarsi e reflexivo: admirar-se, surpreender-se. Da meravigliarsi significa algo como para se espantar.",
+        "source_paragraph": 3
     },
     {
         "position": 32,
@@ -263,13 +293,15 @@ CARDS = [
         "present_example": "Alice trova.",
         "past_example": "Alice trovò.",
         "future_example": "Alice troverà.",
-        "source_paragraph": 3,
+        "context_note": "Trovare pode ser achar ou encontrar. Em narrativas, trovo no passado remoto marca um acontecimento pontual.",
+        "source_paragraph": 3
     },
     {
         "position": 33,
         "text_it": "troppo stravagante",
         "translation_pt": "muito estranho",
-        "source_paragraph": 3,
+        "context_note": "Troppo pode significar demais ou muito, dependendo do contexto. Stravagante e algo fora do comum, estranho ou extravagante.",
+        "source_paragraph": 3
     },
     {
         "position": 34,
@@ -279,7 +311,8 @@ CARDS = [
         "present_example": "Alice sente il Coniglio.",
         "past_example": "Alice sentì il Coniglio.",
         "future_example": "Alice sentirà il Coniglio.",
-        "source_paragraph": 3,
+        "context_note": "Sentire em italiano pode significar ouvir, sentir ou perceber. Aqui e ouvir o Coelho falar.",
+        "source_paragraph": 3
     },
     {
         "position": 35,
@@ -289,13 +322,15 @@ CARDS = [
         "present_example": "Faccio tardi.",
         "past_example": "Ho fatto tardi.",
         "future_example": "Farò tardi.",
-        "source_paragraph": 3,
+        "context_note": "Fare tardi e expressao fixa para atrasar-se ou ficar tarde. Faro esta no futuro e combina com a fala apressada do Coelho.",
+        "source_paragraph": 3
     },
     {
         "position": 36,
         "text_it": "troppo tardi",
         "translation_pt": "muito tarde",
-        "source_paragraph": 3,
+        "context_note": "Tardi significa tarde. Com troppo, a frase ganha intensidade: tarde demais ou muito tarde.",
+        "source_paragraph": 3
     },
     {
         "position": 37,
@@ -305,7 +340,8 @@ CARDS = [
         "present_example": "Alice capisce.",
         "past_example": "Alice capì.",
         "future_example": "Alice capirà.",
-        "source_paragraph": 3,
+        "context_note": "Capire e entender. Capi esta no passado remoto, muito comum em texto literario para uma acao concluida.",
+        "source_paragraph": 3
     },
     {
         "position": 38,
@@ -315,13 +351,15 @@ CARDS = [
         "present_example": "Tutto le pare naturale.",
         "past_example": "Tutto le parve naturale.",
         "future_example": "Tutto le parrà naturale.",
-        "source_paragraph": 3,
+        "context_note": "Parere significa parecer. Le parve quer dizer pareceu a ela; le funciona como para ela ou a ela.",
+        "source_paragraph": 3
     },
     {
         "position": 39,
         "text_it": "perfettamente naturale",
         "translation_pt": "perfeitamente natural",
-        "source_paragraph": 3,
+        "context_note": "Perfettamente e adverbio formado de perfetto + mente. Ele intensifica naturale: completamente natural.",
+        "source_paragraph": 3
     },
     {
         "position": 40,
@@ -331,13 +369,14 @@ CARDS = [
         "present_example": "Alice vede il Coniglio.",
         "past_example": "Alice vide il Coniglio.",
         "future_example": "Alice vedrà il Coniglio.",
-        "source_paragraph": 3,
-    },
+        "context_note": "Vedere e ver. Vide e passado remoto; vedra e futuro. Quando vide introduz o momento em que a percepcao muda a cena.",
+        "source_paragraph": 3
+    }
 ]
 
 
 class Command(BaseCommand):
-    help = "Cria o primeiro lote de cards do Capítulo I."
+    help = "Cria o primeiro lote de cards do Cap?tulo I."
 
     def handle(self, *args, **options):
         created = 0

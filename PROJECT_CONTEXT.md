@@ -131,3 +131,6 @@ main
   `/usr/local/bin/atualizar-site-idiomas`, para atualizar o projeto novo,
   executar migrations, `seed_chapter_one`, `collectstatic`, `check` e reiniciar
   o servico `site_idiomas`.
+- Depois os 40 cards iniciais do Capitulo I receberam explicacoes mais completas
+  em `context_note`, e foi criado teste para garantir que todos os cards tenham
+  explicacao e nao tenham marcadores de acento quebrado.
