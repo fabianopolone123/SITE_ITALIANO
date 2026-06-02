@@ -124,3 +124,6 @@ main
 - Depois a relacao foi melhorada para considerar formas do verbo em outros
   tempos, como presente, passado e futuro.
 - Depois o PDF do livro foi incluido no GitHub junto com o projeto.
+- Depois o projeto foi preparado para deploy no VPS usando variaveis de ambiente
+  `DJANGO_SECRET_KEY`, `DJANGO_DEBUG`, `DJANGO_ALLOWED_HOSTS` e
+  `DJANGO_CSRF_TRUSTED_ORIGINS`, com `STATIC_ROOT` para `collectstatic`.
